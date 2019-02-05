@@ -1,5 +1,5 @@
 from math import ceil, floor
-
+from collections import Counter
 def mean(numLS):
     """
     Finds the sum of a list of numbers and divided by the
@@ -25,7 +25,16 @@ def median(numLS):
     else:
         return numLS[int(medFormula(numLS))]
 
+def mode(numLS):
+    """
+    Finds the most occurring number
+    """
+    moCom = Counter(numLS).most_common(1)
+    mode = moCom[0]
+    return mode[0]
 
-numbers = [26.1, 25.0, 25.2, 25.6, 25.7]
-
-print(median(numbers))
+def range(numLS):
+    numLS.sort()
+    return numLS[len(numLS) - 1] - numLS[0]
+numlist = [34, 34, 132, 45, 576, -67, 67, 67, 67, 67]
+print(range(numlist))
