@@ -1,20 +1,19 @@
 from math import ceil, floor
 from collections import Counter
+
 def mean(numLS):
     """
     Finds the sum of a list of numbers and divided by the
     length of the list leaving the mean.
     """
-    result = sum(numLS) / float(len(numLS))
-    return result
+    return sum(numLS) / float(len(numLS))
 
 def median(numLS):
     """
     The middle value of a set of ordered data.
     """
     def medFormula(numLS):
-        result = (len(numLS) + 1) / 2 - 1
-        return result
+        return (len(numLS) + 1) / 2 - 1
 
     numLS.sort()
 
@@ -33,8 +32,10 @@ def mode(numLS):
     mode = moCom[0]
     return mode[0]
 
-def range(numLS):
+def sRange(numLS):
     numLS.sort()
     return numLS[len(numLS) - 1] - numLS[0]
+
+
 numlist = [34, 34, 132, 45, 576, -67, 67, 67, 67, 67]
-print(range(numlist))
+print(sRange(numlist))
